@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bm_fan_stories"
+        android:title="@string/fan_stories"
+        android:icon="@drawable/icon_fan_stories"
+        />
+
+    <item
+        android:id="@+id/bm_match_center"
+        android:title="@string/match_center"
+        android:icon="@drawable/icon_match_center"
+        />
+
+    <item
+        android:id="@+id/bm_find_fans"
+        android:title="@string/fans_near_me"
+        android:icon="@drawable/icon_find_fans"
+        />
+
+</menu>
