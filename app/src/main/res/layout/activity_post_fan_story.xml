@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PostFanStoryActivity">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/activity_post_fan_story_tilTitle"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/title" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/activity_post_fan_story_titlStory"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="3"
+            android:maxLines="3"
+            android:maxLength="200"
+            android:gravity="top"
+            android:hint="@string/your_story" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/activity_post_fan_story_ivVideo"
+            android:src="@drawable/icon_video"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:id="@+id/activity_post_fan_story_ivPhoto"
+        android:src="@drawable/icon_photo"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+    <Button
+        android:id="@+id/activity_post_fan_story_btnSubmit"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="180dp"
+        android:text="@string/submit_story"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
