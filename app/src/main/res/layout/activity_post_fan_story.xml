@@ -7,6 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".activities.PostFanStoryActivity">
 
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            fontPath="fonts/PoppinsBold.ttf"
+            android:text="Post your fan story"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingPrefix" />
+        <ImageView
+            android:onClick="closeActivity"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:src="@drawable/icon_close_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/activity_post_fan_story_tilTitle"

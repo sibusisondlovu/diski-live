@@ -12,4 +12,17 @@
     <string name="your_story">Your story</string>
     <string name="title">Title</string>
     <string name="submit_story">SUBMIT STORY</string>
+    <string name="welcome_intro_body">Find, Connect and Follow fellow fans and your beloved club to get involved in fan stories, match center rooms, live score, get in-game event notifications, live commentary.</string>
+    <string name="get_started_btn_label">GET STARTED</string>
+    <string name="getting_started">Getting Started</string>
+    <string name="create_an_account_to_continue">Create an account to continue</string>
+    <string name="full_names">Full Names</string>
+    <string name="nickname">Nickname</string>
+    <string name="cellphone_number">Cellphone Number</string>
+    <string name="terms_and_conditions">By creating an account you agree to our Terms and conditions</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="please_wait_verifying_otp_label">Please wait, verifying OTP...</string>
+    <string name="verify_otp_button">Verify OTP</string>
+    <string name="enter_code_below_label">Enter code below</string>
+    <string name="otp_authentication_label">OTP Authentication</string>
 </resources>

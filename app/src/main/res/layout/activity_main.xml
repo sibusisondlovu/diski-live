@@ -6,7 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/activity_main_custom_toolbar"
+        android:background="@color/black"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="80dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/row_fan_post_profile_image"
+            android:padding="5dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/default_profile_photo"
+            app:civ_circle_background_color="@color/white"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FFF"/>
+        <TextView
+            android:text="DISKI LIVE"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
+
+        <ImageView
+            android:onClick="openPostStoryActivity"
+            android:id="@+id/activity_main_iv_postStory"
+            android:src="@drawable/icon_post_story"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
     <FrameLayout
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/activity_main_custom_toolbar"
         android:id="@+id/main_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

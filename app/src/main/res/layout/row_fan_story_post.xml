@@ -1,158 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
+<androidx.cardview.widget.CardView
+
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
     android:layout_height="wrap_content">
 
-
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/row_fan_post_profile_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/default_profile_photo"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FF000000"/>
-
+        android:layout_height="wrap_content"
+>
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:text="sibusiso_n"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:id="@+id/row_fan_post_tv_username"
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/row_fan_post_profile_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/default_profile_photo"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="Fan Team"
-                android:textSize="10sp"
-                android:id="@+id/row_fan_post_tv_rank"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <RatingBar
-                android:id="@+id/row_fan_post_rb_rank_level"
-                android:numStars="5"
-                style="@style/TextAppearance.AppCompat.Small"
-                android:layout_width="80dp"
-                android:layout_height="30dp"/>
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="sibusiso_n"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:id="@+id/row_fan_post_tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/row_fan_post_tv_team_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/mamelodi_sundowns"/>
+
+                    <TextView
+                        android:text="Mamelodi Sundowns"
+                        android:textSize="10sp"
+                        android:id="@+id/row_fan_post_tv_team_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <RatingBar
+                    android:id="@+id/row_fan_post_rb_rank_level"
+                    android:layout_width="wrap_content"
+                    android:numStars="5"
+                    android:rating="3"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_height="20dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/row_fan_post_iv_postImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_video_place_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/row_fan_post_tv_comments"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:textSize="11sp"
+                android:text="Comments"
+                android:drawableLeft="@drawable/icon_comments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/icon_comments" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="10dp"/>
+            <TextView
+                android:id="@+id/row_fan_post_tv_upvote"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:textSize="11sp"
+                android:text="Upvote"
+                android:drawableEnd="@drawable/icon_upvote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_upvote" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"/>
+            <TextView
+                android:id="@+id/row_fan_post_tv_downvote"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:textSize="11sp"
+                android:text="Upvote"
+                android:drawableEnd="@drawable/icon_downvote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_downvote" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/row_fan_post_tv_share"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:textSize="11sp"
+                android:text="Share"
+                android:drawableEnd="@drawable/icon_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_share" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/row_fan_post_tv_title"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Title of fan story"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/row_fan_post_tv_body"
+            android:gravity="center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="13sp"
+            android:text="Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:drawableStart="@drawable/icon_duration"
+            android:layout_gravity="end"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/row_fan_post_tv_duration"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:textSize="11sp"
+            android:text="Posted 12 minutes ago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:drawableLeft="@drawable/icon_duration" />
+
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/row_fan_post_iv_postImage"
-        android:src="@drawable/default_video_place_holder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:padding="5dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/row_fan_post_tv_comments"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical"
-            android:textSize="11sp"
-            android:text="Comments"
-            android:drawableLeft="@drawable/icon_comments"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/icon_comments" />
-
-        <View
-            android:layout_width="20dp"
-            android:layout_height="10dp"/>
-        <TextView
-            android:id="@+id/row_fan_post_tv_upvote"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical"
-            android:textSize="11sp"
-            android:text="Upvote"
-            android:drawableEnd="@drawable/icon_upvote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/icon_upvote" />
-
-        <View
-            android:layout_width="10dp"
-            android:layout_height="10dp"/>
-        <TextView
-            android:id="@+id/row_fan_post_tv_downvote"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical"
-            android:textSize="11sp"
-            android:text="Upvote"
-            android:drawableEnd="@drawable/icon_downvote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/icon_downvote" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="10dp"
-            android:layout_weight="1" />
-        <TextView
-            android:id="@+id/row_fan_post_tv_share"
-            android:drawablePadding="5dp"
-            android:gravity="center_vertical"
-            android:textSize="11sp"
-            android:text="Share"
-            android:drawableEnd="@drawable/icon_share"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableRight="@drawable/icon_share" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/row_fan_post_tv_title"
-        android:drawablePadding="5dp"
-        android:gravity="center_vertical"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Title of fan story"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/row_fan_post_tv_body"
-        android:gravity="center_vertical"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:textSize="13sp"
-        android:text="Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp" />
-
-    <TextView
-        android:drawableStart="@drawable/icon_duration"
-        android:layout_gravity="end"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
-        android:id="@+id/row_fan_post_tv_duration"
-        android:drawablePadding="5dp"
-        android:gravity="center_vertical"
-        android:textSize="11sp"
-        android:text="Posted 12 minutes ago"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:drawableLeft="@drawable/icon_duration" />
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

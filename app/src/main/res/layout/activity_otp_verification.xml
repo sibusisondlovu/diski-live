@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".activities.OtpVerificationActivity">
+
+    <ImageView
+        android:onClick="closeActivity"
+        android:layout_gravity="end"
+        android:padding="10dp"
+        android:src="@drawable/icon_close_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="@string/otp_authentication_label"
+        android:textSize="26sp"
+        fontPath="fonts/PoppinsBold.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:text="An authentication code has been sent \nto 27826468770"
+        android:textSize="13sp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <TextView
+        android:text="@string/enter_code_below_label"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/activity_opt_verification_etVerificationCode"
+        android:text="######"
+        android:textSize="32sp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <ProgressBar
+        android:id="@+id/activity_opt_verification_progressBar"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <TextView
+
+        android:text="@string/please_wait_verifying_otp_label"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <Button
+        android:id="@+id/activity_opt_verification_btnVerify"
+        android:background="@drawable/round_primary_button"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/verify_otp_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

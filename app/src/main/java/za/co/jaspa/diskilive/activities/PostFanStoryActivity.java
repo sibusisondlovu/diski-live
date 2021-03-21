@@ -3,6 +3,7 @@ package za.co.jaspa.diskilive.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -21,6 +22,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import za.co.jaspa.diskilive.R;
 
 public class PostFanStoryActivity extends AppCompatActivity {
@@ -33,6 +35,11 @@ public class PostFanStoryActivity extends AppCompatActivity {
 
     private String strTitle, strStory;
     private String strMediaType;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,5 +150,9 @@ public class PostFanStoryActivity extends AppCompatActivity {
                         Toast.makeText(PostFanStoryActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    public void closeActivity(View view) {
+        finish();
     }
 }
