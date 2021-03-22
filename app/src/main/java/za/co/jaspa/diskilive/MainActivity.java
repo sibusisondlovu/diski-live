@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import za.co.jaspa.diskilive.activities.PostFanStoryActivity;
+import za.co.jaspa.diskilive.activities.ProfileActivity;
 import za.co.jaspa.diskilive.activities.WelcomeActivity;
 import za.co.jaspa.diskilive.fragments.FanStoriesFragment;
 import za.co.jaspa.diskilive.fragments.FindFansFragment;
@@ -78,5 +79,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+    }
+
+    public void openProfileScreen(View view) {
+        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+        startActivity(intent);
     }
 }

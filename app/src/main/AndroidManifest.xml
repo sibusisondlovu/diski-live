@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DiskiLive">
-        <activity android:name=".activities.OtpVerificationActivity"></activity>
+        <activity android:name=".activities.ProfileActivity"></activity>
+        <activity android:name=".activities.OtpVerificationActivity" />
         <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.WelcomeActivity" />
         <activity android:name=".activities.PostFanStoryActivity" />

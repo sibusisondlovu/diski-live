@@ -36,6 +36,8 @@
 
     <TextView
         android:text="@string/full_names"
+        android:inputType="text"
+        android:maxLength="20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <EditText
@@ -53,6 +55,8 @@
     <EditText
         android:id="@+id/sign_up_screen_etNickname"
         android:layout_width="match_parent"
+        android:maxLength="10"
+        android:inputType="text"
         android:layout_height="wrap_content"/>
 
     <View
@@ -64,6 +68,8 @@
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/sign_up_screen_etCellphoneNumber"
+        android:inputType="phone"
+        android:maxLength="10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
