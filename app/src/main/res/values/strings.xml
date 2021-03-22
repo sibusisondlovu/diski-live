@@ -23,6 +23,6 @@
     <string name="sign_up">SIGN UP</string>
     <string name="please_wait_verifying_otp_label">Please wait, verifying OTP...</string>
     <string name="verify_otp_button">Verify OTP</string>
-    <string name="enter_code_below_label">Enter code below</string>
+    <string name="enter_code_below_label">Please wait while we auto-verify the OTP. Should we fail please enter code below</string>
     <string name="otp_authentication_label">OTP Authentication</string>
 </resources>

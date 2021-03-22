@@ -26,7 +26,8 @@
         tools:ignore="MissingPrefix" />
 
     <TextView
-        android:text="An authentication code has been sent \nto 27826468770"
+        android:id="@+id/activity_otp_verification_tvNotice"
+
         android:textSize="13sp"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
@@ -40,13 +41,14 @@
     <TextView
         android:text="@string/enter_code_below_label"
         android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"/>
     <EditText
         android:layout_gravity="center_horizontal"
         android:id="@+id/activity_opt_verification_etVerificationCode"
         android:text="######"
-        android:textSize="32sp"
+        android:textSize="28sp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"/>
 
@@ -60,7 +62,7 @@
         android:layout_height="50dp" />
 
     <TextView
-
+        android:id="@+id/activity_opt_verification_tvMessage"
         android:text="@string/please_wait_verifying_otp_label"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
