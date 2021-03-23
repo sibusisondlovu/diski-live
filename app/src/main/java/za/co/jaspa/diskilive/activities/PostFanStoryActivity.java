@@ -15,8 +15,12 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.Timestamp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Source;
+import com.squareup.picasso.Picasso;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -34,7 +38,7 @@ public class PostFanStoryActivity extends AppCompatActivity {
     private Button btnSubmitStory ;
 
     private String strTitle, strStory;
-    private String strMediaType;
+    private String strMediaType, strFanName, strFanUid, strFanAvatar, strFanTeam;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -47,6 +51,8 @@ public class PostFanStoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_post_fan_story);
 
         db = FirebaseFirestore.getInstance();
+
+        getUserDetails();
 
         ibVideo = findViewById(R.id.activity_post_fan_story_ivVideo);
         ibPhoto = findViewById(R.id.activity_post_fan_story_ivPhoto);
@@ -125,9 +131,11 @@ public class PostFanStoryActivity extends AppCompatActivity {
         fanStory.put("body", strStory);
         fanStory.put("media", "https://www.youtube.com/watch?v=d1-QNhcGsq0");
         fanStory.put("mediaType", strMediaType);
-        fanStory.put("fanUid", "1qazxsw23edc");
-        fanStory.put("fanUsername", "Sibusiso N");
-        fanStory.put("fanAvatar", "http://www.rottmair.de/profiles/Sebastian_Rottmair.jpg");
+        fanStory.put("fanUid", strFanUid);
+        fanStory.put("fanUsername", strFanName);
+        fanStory.put("fanAvatar", strFanAvatar);
+        fanStory.put("fanTeam", strFanTeam);
+        fanStory.put("teamBadge", strFanAvatar);
         fanStory.put("createdAt", new Date().toString());
         fanStory.put("commentsCount", 0);
         fanStory.put("downVotesCount", 0);
@@ -139,7 +147,7 @@ public class PostFanStoryActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        //TODO add success dialog with option to ask or go to next strot
+
                         Toast.makeText(PostFanStoryActivity.this, "Your story has been posted successfully", Toast.LENGTH_SHORT).show();
                         finish();
                     }
@@ -154,5 +162,39 @@ public class PostFanStoryActivity extends AppCompatActivity {
 
     public void closeActivity(View view) {
         finish();
+    }
+
+    private void getUserDetails(){
+
+        Source source = Source.CACHE;
+
+        FirebaseFirestore.getInstance().collection("fans")
+                .document(FirebaseAuth.getInstance().getUid())
+                .get(source)
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                        strFanName = documentSnapshot.getString("nickName");
+                        strFanUid = documentSnapshot.getString("uid");
+                        strFanAvatar =documentSnapshot.getString("avatar");
+                        strFanTeam = documentSnapshot.getString("team");
+
+
+//                        if (documentSnapshot.get("avatar") != null) {
+//                            Picasso.get()
+//                                    .load(strFanAvatar)
+//                                    .placeholder(R.drawable.avatar_place_holder)
+//                                    .error(R.drawable.avatar_place_holder)
+//                                    .into(civAvatar);
+//                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(PostFanStoryActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

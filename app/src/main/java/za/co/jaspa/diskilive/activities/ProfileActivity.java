@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -17,7 +18,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Source;
+import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import za.co.jaspa.diskilive.R;
 
@@ -26,6 +29,7 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView tvFullNames, tvNickName, tvPoints, tvFollowing, tvFollowers;
     private LinearLayout llTeam;
     private Button btnAddTeam;
+    private CircleImageView civAvatar;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -48,6 +52,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvFollowing = findViewById(R.id.activity_profile_tvFollowing);
         llTeam = findViewById(R.id.activity_profile_team);
         btnAddTeam = findViewById(R.id.activity_profile_btnAddTeam);
+        civAvatar = findViewById(R.id.activity_profile_civAvatar);
     }
 
     public void closeActivity(View view) {
@@ -77,6 +82,14 @@ public class ProfileActivity extends AppCompatActivity {
                         }else{
                             llTeam.setVisibility(View.VISIBLE);
                             btnAddTeam.setVisibility(View.GONE);
+                        }
+
+                        if (documentSnapshot.get("avatar") != null) {
+                            Picasso.get()
+                                    .load(documentSnapshot.getString("avatar"))
+                                    .placeholder(R.drawable.avatar_place_holder)
+                                    .error(R.drawable.avatar_place_holder)
+                                    .into(civAvatar);
                         }
                     }
                 })
