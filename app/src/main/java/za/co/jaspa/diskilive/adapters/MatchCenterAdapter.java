@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -40,6 +42,11 @@ public class MatchCenterAdapter  extends RecyclerView.Adapter<MatchCenterAdapter
     @Override
     public void onBindViewHolder(@NonNull MatchCenterAdapter.MyViewHolder myViewHolder, final int position) {
 
+        myViewHolder.homeTeam.setText(matchesList.get(position).getHome_team());
+        myViewHolder.awayTeam.setText(matchesList.get(position).getAway_team());
+        myViewHolder.kickOff.setText(matchesList.get(position).getMatch_start());
+        Picasso.get().load(matchesList.get(position).getHome_team_logo()).into(myViewHolder.homeTeamBadge);
+        Picasso.get().load(matchesList.get(position).getAway_team_logo()).into(myViewHolder.awayTeamBadge);
 
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +73,7 @@ public class MatchCenterAdapter  extends RecyclerView.Adapter<MatchCenterAdapter
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView homeTeam, awayTeam, league, kickOff;
-        CircleImageView homeTeamBadge, awayTeamBadge;
+        ImageView homeTeamBadge, awayTeamBadge;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

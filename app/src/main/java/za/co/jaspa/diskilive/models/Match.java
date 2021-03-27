@@ -3,91 +3,100 @@ package za.co.jaspa.diskilive.models;
 import java.io.Serializable;
 
 public class Match  implements Serializable {
-
-    private String matchId;
-    private String homeTeam;
-    private String awayTeam;
-    private String homeTeamGoals;
-    private String awayTeamGoals;
-    private String homeTeamBadge;
-    private String awayTeamBadge;
-    private String kickOffTime;
-    private String league;
+    private int match_id;
+    private String status;
+    private String match_start;
+    private String minute;
+    private String home_team;
+    private String away_team;
+    private String home_team_logo;
+    private String away_team_logo;
+    private Stat stats;
 
     public Match() {
-        super();
     }
 
-
-    public String getMatchId() {
-        return matchId;
+    public Match(int match_id, String status, String match_start, String minute, String home_team, String away_team, String home_team_logo, String away_team_logo, Stat stats) {
+        this.match_id = match_id;
+        this.status = status;
+        this.match_start = match_start;
+        this.minute = minute;
+        this.home_team = home_team;
+        this.away_team = away_team;
+        this.home_team_logo = home_team_logo;
+        this.away_team_logo = away_team_logo;
+        this.stats = stats;
     }
 
-    public void setMatchId(String matchId) {
-        this.matchId = matchId;
+    public int getMatch_id() {
+        return match_id;
     }
 
-    public String getHomeTeam() {
-        return homeTeam;
+    public void setMatch_id(int match_id) {
+        this.match_id = match_id;
     }
 
-    public void setHomeTeam(String homeTeam) {
-        this.homeTeam = homeTeam;
+    public String getStatus() {
+        return status;
     }
 
-    public String getAwayTeam() {
-        return awayTeam;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public void setAwayTeam(String awayTeam) {
-        this.awayTeam = awayTeam;
+    public String getMatch_start() {
+        return match_start;
     }
 
-    public String getHomeTeamGoals() {
-        return homeTeamGoals;
+    public void setMatch_start(String match_start) {
+        this.match_start = match_start;
     }
 
-    public void setHomeTeamGoals(String homeTeamGoals) {
-        this.homeTeamGoals = homeTeamGoals;
+    public String getMinute() {
+        return minute;
     }
 
-    public String getAwayTeamGoals() {
-        return awayTeamGoals;
+    public void setMinute(String minute) {
+        this.minute = minute;
     }
 
-    public void setAwayTeamGoals(String awayTeamGoals) {
-        this.awayTeamGoals = awayTeamGoals;
+    public String getHome_team() {
+        return home_team;
     }
 
-    public String getHomeTeamBadge() {
-        return homeTeamBadge;
+    public void setHome_team(String home_team) {
+        this.home_team = home_team;
     }
 
-    public void setHomeTeamBadge(String homeTeamBadge) {
-        this.homeTeamBadge = homeTeamBadge;
+    public String getAway_team() {
+        return away_team;
     }
 
-    public String getAwayTeamBadge() {
-        return awayTeamBadge;
+    public void setAway_team(String away_team) {
+        this.away_team = away_team;
     }
 
-    public void setAwayTeamBadge(String awayTeamBadge) {
-        this.awayTeamBadge = awayTeamBadge;
+    public String getHome_team_logo() {
+        return home_team_logo;
     }
 
-    public String getKickOffTime() {
-        return kickOffTime;
+    public void setHome_team_logo(String home_team_logo) {
+        this.home_team_logo = home_team_logo;
     }
 
-    public void setKickOffTime(String kickOffTime) {
-        this.kickOffTime = kickOffTime;
+    public String getAway_team_logo() {
+        return away_team_logo;
     }
 
-    public String getLeague() {
-        return league;
+    public void setAway_team_logo(String away_team_logo) {
+        this.away_team_logo = away_team_logo;
     }
 
-    public void setLeague(String league) {
-        this.league = league;
+    public Stat getStats() {
+        return stats;
+    }
+
+    public void setStats(Stat stats) {
+        this.stats = stats;
     }
 }
