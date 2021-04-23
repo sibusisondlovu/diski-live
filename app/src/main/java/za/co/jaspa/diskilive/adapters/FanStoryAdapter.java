@@ -50,7 +50,6 @@ public class FanStoryAdapter  extends RecyclerView.Adapter<FanStoryAdapter.MyVie
         //body = itemView.findViewById(R.id.row_fan_post_tv_body);
         //duration = itemView.findViewById(R.id.row_fan_post_tv_duration);
         myViewHolder.fanUsername.setText(fanStoryList.get(position).getFanUsername());
-        myViewHolder.title.setText(fanStoryList.get(position).getTitle());
         myViewHolder.body.setText(fanStoryList.get(position).getBody());
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +75,7 @@ public class FanStoryAdapter  extends RecyclerView.Adapter<FanStoryAdapter.MyVie
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView fanUsername, comments, shares, upvote, downvote, title, body, duration;
+        TextView fanUsername, comments,  upvote, downvote, body;
 
         ImageView media;
 
@@ -86,12 +85,10 @@ public class FanStoryAdapter  extends RecyclerView.Adapter<FanStoryAdapter.MyVie
 
             fanUsername = itemView.findViewById(R.id.row_fan_post_tv_username);
             comments = itemView.findViewById(R.id.row_fan_post_tv_comments);
-            shares = itemView.findViewById(R.id.row_fan_post_tv_share);
             upvote = itemView.findViewById(R.id.row_fan_post_tv_upvote);
             downvote = itemView.findViewById(R.id.row_fan_post_tv_downvote);
-            title = itemView.findViewById(R.id.row_fan_post_tv_title);
             body = itemView.findViewById(R.id.row_fan_post_tv_body);
-            duration = itemView.findViewById(R.id.row_fan_post_tv_duration);
+
 
         }
     }

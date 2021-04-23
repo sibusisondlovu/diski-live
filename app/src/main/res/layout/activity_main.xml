@@ -27,22 +27,13 @@
             app:civ_circle_background_color="@color/white"
             app:civ_border_width="2dp"
             app:civ_border_color="#FFF"/>
-        <TextView
-            android:text="DISKI LIVE"
-            android:layout_weight="1"
-            android:textSize="14sp"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal" />
 
         <ImageView
-            android:onClick="openPostStoryActivity"
-            android:id="@+id/activity_main_iv_postStory"
-            android:src="@drawable/icon_post_story"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_gravity="center"
+            android:src="@drawable/tool_bar_logo"
+            android:layout_width="130dp"
+            android:layout_height="50dp"/>
+
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
