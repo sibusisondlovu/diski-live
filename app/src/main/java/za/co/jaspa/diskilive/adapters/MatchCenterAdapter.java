@@ -30,7 +30,8 @@ public class MatchCenterAdapter  extends RecyclerView.Adapter<MatchCenterAdapter
 
     @NonNull
     @Override
-    public MatchCenterAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public MatchCenterAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup,
+                                                              int i) {
 
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_match_center,
                 viewGroup,
